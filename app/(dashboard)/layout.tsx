@@ -1,15 +1,20 @@
 import Sidebar from "@/components/layout/Sidebar";
 
-// Dashboard layout for protected pages
+// Layout for dashboard pages
 export default function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white md:flex">
+      {/* Sidebar handles its own mobile and desktop behavior */}
       <Sidebar />
-      <main className="flex-1 p-8">{children}</main>
+
+      {/* Main content area */}
+      <main className="flex-1 p-4 sm:p-5 md:p-8">
+        {children}
+      </main>
     </div>
   );
 }
